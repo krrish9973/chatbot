@@ -1,0 +1,244 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - good afternoon
+    - what's up?
+    - howdy
+    - hey there
+    - what's new
+    - how are you
+    - good day
+    - nice to meet you
+    - how can I help you
+    - is anyone there
+    - greetings
+    - hiya
+    - yo
+    - how do you do?
+    - pleasure to meet you
+    - is this the MoonLight Hotel bot?
+
+- intent: goodbye
+  examples: |
+    - ciao
+    - farewell
+    - have a good day
+    - cu
+    - see you later
+    - bye
+    - good-bye
+    - adios
+    - thanks, bye
+    - I'm done for now
+    - talk to you later
+    - catch you later
+    - I'm heading out
+    - I have to go now
+    - so long
+    - I'll be back
+    - see you soon
+    - I'm out of here
+
+- intent: book_room
+  examples: |
+    - I want to book a room.
+    - Can I reserve a room?
+    - I'd like to make a reservation.
+    - I am looking to book a room at MoonLight Hotel.
+    - Book a room for me.
+    - Can you help me with a room booking?
+    - I need to reserve a room.
+    - Do you have any rooms available?
+    - I'd like to check room availability.
+    - I want to find a room.
+    - Is it possible to book a stay?
+    - I'm interested in staying at your hotel.
+    - I want to get a room for the night.
+    - I'd like to book a stay at the MoonLight Hotel.
+    - How do I book a room?
+    - I'm ready to make a reservation.
+    - I need a place to stay.
+    - Can you help me with a hotel booking?
+    - I'm looking for a room for my vacation.
+    - I want to book a hotel stay.
+    - I need a hotel room.
+    - I want to reserve a spot at your hotel.
+    - Is there a room available?
+
+
+- intent: provide_name
+  examples: |
+    - My name is [John Doe](name).
+    - I am [Jane Smith](name).
+    - You can call me [Alex Johnson](name).
+    - It's [Sam Wilson](name).
+    - My full name is [Sarah Connor](name).
+    - The name for the reservation is [Michael Scott](name).
+    - You can put the reservation under [Olivia Benson](name).
+    - Please use the name [Peter Parker](name).
+    - [Tony Stark](name) is the name.
+    - [Clark Kent](name).
+    - I am [Bruce Wayne](name).
+    - My name is [Diana Prince](name).
+    - It's [Barry Allen](name) making the reservation.
+    - The name is [Lois Lane](name).
+    - Call me [Walter White](name).
+    - The name I'd like to use is [Jessie Pinkman](name).
+    - I'm [Anakin Skywalker](name).
+    - My name is [Luke Skywalker](name).
+    - The booking is for [Princess Leia](name).
+    - You can refer to me as [Han Solo](name).
+    - my name is [krishna Joshi](name)
+    - You can call me [Krishna](name).
+    - I'm [John Doe](name).
+    - [Sarah Connor](name) is my name.
+    - my name is [K J](name).
+    - [Romas James](name)
+
+- intent: provide_time_period
+  examples: |
+    - I want to book from [25.10.2025](start_date) to [31.10.2025](end_date).
+    - We are staying from [25.11.2025](start_date) until [05.11.2024](end_date).
+    - checkin date [05.09.2025](start_date) and checkout date [3 nights](number_of_nights).
+    - From [15.11.2026](start_date) to [12.12.2025](end_date).
+    - For a week from [15.12.2025](start_date).
+    - I need a room from [11.11.2025](start_date) until [11.12.2025](end_date).
+    - I want to book for [11.12.2025 to 11.15.2025](time_period).
+    - How about a reservation for [11.12.2025](date)?
+    - My stay is for [four days](number_of_nights) starting [01.01.2025](start_date).
+    - I'll be staying [next week](time_period).
+    - My check-in date is [25.12.2025](start_date) and check-out is [01.01.2026](end_date).
+    - I am looking to stay for [one night](number_of_nights).
+    - A stay for [five days](number_of_nights).
+    - A stay for [5 days](number_of_nights)
+    - checkin [11.12.2025](start_date) checkout [15.12.2025](end_date)
+    - from [11.12.2025](start_date) to [15.12.2025](end_date)
+    - check-in [11.12.2025](start_date) check-out [15.12.2025](end_date)
+    - arriving [11.12.2025](start_date) departing [15.12.2025](end_date)
+    - [11.12.2025](start_date) until [15.12.2025](end_date)
+    - [12.12.2025](start_date) to [15.12.2025](end_date)
+    - from [01.01.2025](start_date) to [05.01.2025](end_date)
+    - checkin [15.12.2025](start_date) checkout [20.12.2025](end_date)
+    - [25.12.2025](start_date) until [01.01.2026](end_date)
+    - [11.12.2025](start_date) - [15.12.2025](end_date)
+
+
+- intent: provide_guests
+  examples: |
+    - There will be [two](number_of_guests) of us.
+    - I am booking for [four](number_of_guests) people.
+    - [One](number_of_guests) person.
+    - Just [me](number_of_guests).
+    - We are a family of [five](number_of_guests).
+    - We'll have [three](number_of_guests) guests.
+    - A party of [six](number_of_guests).
+    - It's a group of [ten](number_of_guests).
+    - The number of guests is [two](number_of_guests).
+    - I need a room for [me and my wife](number_of_guests:2).
+    - It's a reservation for [a couple](number_of_guests:2).
+    - We are a group of [seven](number_of_guests).
+    - It's just [myself](number_of_guests:1).
+    - I need a room for [two adults and one child](number_of_guests:3).
+    - The booking is for [eight people](number_of_guests).
+    - I am booking for [three friends](number_of_guests:3).
+    - We are a total of [four](number_of_guests) people.
+    - I need to book a room for a single person.
+    - The number of people is [two](number_of_guests).
+    - [Nine](number_of_guests) guests.
+    - [11](number_of_guests) guests.
+    - [2](number_of_guests)
+    - [3](number_of_guests) guests
+    - [5](number_of_guests) total.
+
+- intent: select_meal_preference
+  examples: |
+    - i want to choose [Asian](meal_preference)
+    - i want to select [Asian](meal_preference)
+    - i want choose [Chinese](meal_preference) meal
+    - i want to select [Chinese](meal_preference)
+    - [Italian](meal_preference) looks good
+    - i want to choose [Italian](meal_preference)
+
+- intent: provide_payment_method
+  examples: |
+    - I want to pay with [credit card](payment_method).
+    - I'll use [cash](payment_method).
+    - Can I pay with [a debit card](payment_method)?
+    - My payment method is [MasterCard](payment_method).
+    - I'll use [Visa](payment_method).
+    - Is [American Express](payment_method) accepted?
+    - I plan to use [PayPal](payment_method).
+    - Will you take [a wire transfer](payment_method)?
+    - I'd like to pay with a [bank transfer](payment_method).
+    - My payment method is [Discover](payment_method).
+    - I'll be paying with my [card](payment_method).
+    - Do you accept [online payments](payment_method)?
+    - [credit card](payment_method)
+    - [debit card](payment_method)
+    - [cash](payment_method)
+    - [mastercard](payment_method)
+    - [visa](payment_method)
+    - [american express](payment_method)
+    - [paypal](payment_method)
+    - [wire transfer](payment_method)
+    - [bank transfer](payment_method)
+    - [card](payment_method)
+    - [online payments](payment_method)
+
+
+
+- intent: affirm
+  examples: |
+    - yes
+    - yup
+    - indeed
+    - that's right
+    - correct
+    - definitely
+    - yes please
+    - sounds good
+    - sure thing
+    - of course
+    - absolutely
+    - alright
+    - I agree
+    - totally
+    - that is correct
+    - yes, that's what I said
+    - perfect
+    - exactly
+    - okay
+    - Yes
+    - let's continue
+    - continue
+    - sure, let's go
+    - sure
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no thanks
+    - nope
+    - not really
+    - not at all
+    - by no means
+    - incorrect
+    - that's wrong
+    - I disagree
+    - I'd rather not
+    - not what I had in mind
+    - that's not right
+    - no, that is not it
+    - I don't want to
+    - i don't want to give my personal information
+    - drop the plan
+    - skip this

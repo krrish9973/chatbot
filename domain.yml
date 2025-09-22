@@ -1,0 +1,115 @@
+version: "3.1"
+
+# The intents the bot understands.
+intents:
+  - greet
+  - goodbye
+  - book_room
+  - provide_name
+  - provide_time_period
+  - provide_guests
+  - provide_payment_method
+  - select_meal_preference
+  - affirm
+  - deny
+
+# The entities we want to extract from user messages.
+entities:
+  - name
+  - start_date
+  - end_date
+  - number_of_guests
+  - payment_method
+  - time_period
+  - date
+  - number_of_nights
+  - meal_preference
+
+# The slots that store information during the conversation.
+slots:
+  name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: name
+  start_date:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: start_date
+  end_date:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: end_date
+  number_of_guests:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: number_of_guests
+  meal_preference:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: meal_preference
+  payment_method:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: payment_method
+
+actions:
+  - action_confirm_booking
+  - action_booking_summary
+
+# The responses your bot can send.
+responses:
+  utter_greet:
+    - text: "🌙 Welcome to MoonLight Hotel! How may I assist you today?"
+    - text: "Hello and welcome! How can I help you with your MoonLight Hotel booking?"
+    - text: "Hi there! I’m your MoonLight Hotel assistant. What can I do for you today?"
+
+  utter_book_room:
+  - text: "Of course! To book your room, I’ll just need a few details: your name, check-in and check-out dates, and the number of guests. Would you like to continue? (Yes/No)"
+
+  utter_ask_name:
+    - text: "May I have your full name for the reservation, please?"
+    - text: "Could you kindly provide your name for the booking?"
+    - text: "To proceed with your reservation, may I know your full name?"
+
+  utter_ask_time_period:
+  - text: "What dates would you like to book your stay? Please enter them in the format dd.mm.yyyy."
+  - text: "Could you share your desired check-in and check-out dates? Kindly use the format dd.mm.yyyy."
+  - text: "Please provide the time period of your stay (check-in and check-out). Use the format dd.mm.yyyy."
+
+  utter_ask_number_of_guests:
+    - text: "How many guests will be staying with us?"
+    - text: "Could you please let me know the total number of guests for the booking?"
+    - text: "For how many people should I make the reservation?"
+
+  utter_ask_meal_preference:
+    - text: "Please Select Meal Preference \n 1. Asian \n 2. Chinese \n 3. Italian"
+
+  utter_ask_payment_method:
+    - text: "How would you like to settle the payment? We accept credit/debit cards, cash, or bank transfer."
+    - text: "May I know your preferred payment method? We currently accept card, cash, and wire transfer."
+    - text: "Which payment option would you like to use for your booking—card, cash, or bank transfer?"
+
+
+  utter_deny_booking:
+    - text: "I understand. Is there anything else I can help you with?"
+
+  utter_goodbye:
+    - text: "Goodbye! We hope to see you again soon."
+    - text: "Thank you for visiting MoonLight Hotel. Have a great day!"
+
+# The forms your bot can use to collect required information.
+forms:
+  booking_form:
+    required_slots:
+      - name
+      - start_date
+      - end_date
+      - number_of_guests
+      - meal_preference
+      - payment_method

@@ -1,0 +1,41 @@
+version: "3.1"
+stories:
+
+- story: Introduction
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: book_room
+    - action: utter_book_room
+    - intent: affirm
+    - action: utter_ask_name
+    - intent: provide_name
+      entities:
+        - name: "Romas James"
+    - action: utter_ask_time_period
+    - intent: provide_time_period
+      entities:
+        - start_date: "25.12.2025"
+        - end_date: "01.01.2026"
+    - action: utter_ask_number_of_guests
+    - intent: provide_guests
+      entities:
+        - number_of_guests: "2"
+    - action: utter_ask_meal_preference
+    - intent: select_meal_preference
+      entities:
+        - meal_preference : "Chinese"
+    - action: utter_ask_payment_method
+    - intent: provide_payment_method
+      entities:
+        - payment_method: "credit card"
+    - action: action_confirm_booking
+    - intent: affirm
+    - action: action_booking_summary
+
+- story: User says goodbye early
+  steps:
+    - intent: book_room
+    - action: utter_book_room
+    - intent: deny
+    - action: utter_goodbye

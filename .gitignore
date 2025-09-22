@@ -1,0 +1,39 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.venv/
+rasa_venv/
+
+# Rasa generated files
+models/
+.rasa/
+results/
+.config/
+.pytest_cache/
+.history/
+data/__snapshots__/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.bak
+*~
+
+# Sensitive files (if any)
+credentials.yml
+endpoints.yml
+# If you have specific files with sensitive data not covered above, add them here.
